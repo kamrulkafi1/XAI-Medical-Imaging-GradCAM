@@ -1,27 +1,30 @@
-# Explainable AI (XAI) for Medical Diagnostics
+# Explainable AI (XAI) for Medical Diagnostics: Skin Lesion Interpretation
 
 ## 📌 Project Overview
-This project focuses on the interpretability of Deep Learning models in healthcare. Using **Grad-CAM (Gradient-weighted Class Activation Mapping)**, I visualized the decision-making process of a **ResNet50** model trained on the **HAM10000** (Skin Cancer) dataset. 
+Deep Learning models are often seen as "black boxes," making it difficult for clinicians to trust their decisions. This project implements **Grad-CAM (Gradient-weighted Class Activation Mapping)** using the **Captum** library to interpret **ResNet50** classifications on the **HAM10000** skin cancer dataset.
 
-The goal is to bridge the gap between AI performance and clinical trust by providing visual evidence of why a model classifies a lesion as malignant or benign.
+The objective is to provide visual explanations of why a model identifies a lesion as malignant or benign, focusing on clinically relevant features like texture and asymmetry.
 
-## 🛠️ Technical Stack
-- **Framework:** PyTorch
-- **Library:** Captum (Model Interpretability)
-- **Dataset:** HAM10000 (Skin Cancer MNIST)
-- **Architecture:** ResNet50 (Transfer Learning)
+## 🧪 Methodology
+- **Dataset:** [HAM10000 (Skin Cancer MNIST)](https://www.kaggle.com/datasets/kmader/skin-cancer-mnist-ham10000)
+- **Model:** Pre-trained ResNet50 (Transfer Learning)
+- **Interpretability Technique:** Grad-CAM on the final convolutional layer (`layer4`).
+- **Framework:** PyTorch & Captum.
 
 ## 📊 Key Results
-The following heatmap demonstrates how the model identifies the central features of a skin lesion:
+The model's decision-making focus was visualized through heatmaps:
 
-![Grad-CAM Heatmap](results/gradcam_result.png)
+![Grad-CAM Result](results/gradcam_skin_lesion.png)
 
-## 📖 Methodology
-1. **Preprocessing:** Standardizing medical images to 224x224 and normalizing per ImageNet standards.
-2. **Backbone:** Utilizing ResNet50's final convolutional layer (`layer4`) to capture high-level semantic information.
-3. **Attribution:** Computing gradients of the target class to generate a localization map highlighting important regions.
+*Interpretation: The heatmap confirms that the model correctly focuses on the central lesion region, aligning with dermatological standards.*
 
-## 🎓 Academic Application
-This project is part of my preparation for **MSc in Data Science/AI** in Germany, focusing on **Reliable and Interpretable Machine Learning.**
+## 🛠️ How to Run
+1. Clone this repository: `git clone https://github.com/your-username/XAI-Medical-Imaging-GradCAM.git`
+2. Install dependencies: `pip install -r requirements.txt`
+3. Run the notebook in the `notebooks/` folder using Kaggle or Google Colab.
 
-[![Kaggle](https://www.kaggle.com/code/kamrulislamkafi/explainable-ai-xai-for-medical-diagnostics)
+## 🎓 Academic Significance
+This work demonstrates proficiency in:
+- **Interpretability:** Moving beyond accuracy to explain model behavior.
+- **XAI in Healthcare:** Addressing the "Black Box" problem in clinical AI.
+- **Deep Learning Pipelines:** Efficiently handling medical datasets in PyTorch.
