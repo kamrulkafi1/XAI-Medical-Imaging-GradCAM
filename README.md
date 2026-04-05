@@ -19,7 +19,7 @@ The model's decision-making focus was visualized through heatmaps:
 *Interpretation: The heatmap confirms that the model correctly focuses on the central lesion region, aligning with dermatological standards.*
 
 ## 🛠️ How to Run
-1. Clone this repository: `git clone https://github.com/your-username/XAI-Medical-Imaging-GradCAM.git`
+1. Clone this repository: `git clone https://github.com/kamrulkafi1/XAI-Medical-Imaging-GradCAM.git`
 2. Install dependencies: `pip install -r requirements.txt`
 3. Run the notebook in the `notebooks/` folder using Kaggle or Google Colab.
 
